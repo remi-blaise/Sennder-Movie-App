@@ -10,6 +10,9 @@ def index(request):
 
 
 def retrieveMoviesFromGhibliAPI():
+    # to show the API is called only once a minute
+    print('Calling Ghibli API')
+
     films = requests.get('https://ghibliapi.herokuapp.com/films/').json()
     peopleList = requests.get('https://ghibliapi.herokuapp.com/people/').json()
 
