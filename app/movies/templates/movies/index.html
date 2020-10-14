@@ -1,0 +1,18 @@
+{% if movies %}
+    <h1>Studio Ghibli Movies</h1>
+    <ul>
+    {% for movie in movies %}
+        <li>
+            "{{ movie.title }}"
+            {% if movie.people %}
+                with:
+                {% for guy in movie.people %}
+                    {{ guy.name }},
+                {% endfor %}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No movies are available.</p>
+{% endif %}
