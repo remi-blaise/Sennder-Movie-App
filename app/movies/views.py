@@ -21,6 +21,7 @@ def retrieveMoviesFromGhibliAPI():
 
     for people in peopleList:
         for film_url in people['films']:
-            next(filter(lambda film: film['url'] == film_url, films))['people'].append(people)
+            film = next(filter(lambda film: film['url'] == film_url, films))
+            film['people'].append(people)
 
     return films
